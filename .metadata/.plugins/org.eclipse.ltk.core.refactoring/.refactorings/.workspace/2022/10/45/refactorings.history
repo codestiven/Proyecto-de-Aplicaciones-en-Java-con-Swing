@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Borrar el recurso «Java_buldier»." deleteContents="false" description="Borrar el recurso «Java_buldier»." element1="/Java_buldier" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1667142660929"/>
+</session>

@@ -1,0 +1,117 @@
+package tareas;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JSeparator;
+import java.awt.Color;
+import javax.swing.SwingConstants;
+import javax.swing.JCheckBox;
+import javax.swing.JSlider;
+import javax.swing.JButton;
+
+public class Encuesta {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Encuesta window = new Encuesta();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Encuesta() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 268, 501);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Elige un sistema operativo");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel.setBounds(23, 42, 180, 14);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Windows");
+		rdbtnNewRadioButton.setBounds(23, 76, 134, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton);
+		rdbtnNewRadioButton.setAlignmentY(0.0f);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Linux");
+		rdbtnNewRadioButton_1.setBounds(23, 114, 154, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton_1);
+		
+		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Mac");
+		rdbtnNewRadioButton_2.setBounds(23, 148, 134, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton_2);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(10, 191, 205, 2);
+		frame.getContentPane().add(separator_1);
+		
+		JLabel lblEligeTuEspecialidad = new JLabel("Elige tu especialidad");
+		lblEligeTuEspecialidad.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblEligeTuEspecialidad.setBounds(23, 204, 180, 14);
+		frame.getContentPane().add(lblEligeTuEspecialidad);
+		
+		JCheckBox rdbtnNewRadioButton_2_1 = new JCheckBox("Mac");
+		rdbtnNewRadioButton_2_1.setBounds(23, 309, 134, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton_2_1);
+		
+		JCheckBox rdbtnNewRadioButton_1_1 = new JCheckBox("Linux");
+		rdbtnNewRadioButton_1_1.setBounds(23, 275, 154, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton_1_1);
+		
+		JCheckBox rdbtnNewRadioButton_3 = new JCheckBox("Windows");
+		rdbtnNewRadioButton_3.setAlignmentY(0.0f);
+		rdbtnNewRadioButton_3.setBounds(23, 237, 134, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton_3);
+		
+		JSeparator separator_1_1 = new JSeparator();
+		separator_1_1.setBounds(10, 346, 205, 2);
+		frame.getContentPane().add(separator_1_1);
+		
+		JLabel lblHorasQueDedicas = new JLabel("Horas que dedicas en el ordenador");
+		lblHorasQueDedicas.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblHorasQueDedicas.setBounds(20, 359, 180, 14);
+		frame.getContentPane().add(lblHorasQueDedicas);
+		
+		JSlider slider = new JSlider();
+		slider.setMinimum(1);
+		slider.setMaximum(10);
+		slider.setBounds(23, 393, 180, 23);
+		frame.getContentPane().add(slider);
+		
+		JButton btnNewButton = new JButton("generar");
+		btnNewButton.setBounds(73, 428, 89, 23);
+		frame.getContentPane().add(btnNewButton);
+	}
+}

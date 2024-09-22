@@ -1,0 +1,84 @@
+package tareas;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JSeparator;
+
+public class Encuesta {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Encuesta window = new Encuesta();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Encuesta() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 268, 501);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Elige un sistema operativo");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel.setBounds(23, 62, 180, 14);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(23, 96, 154, 105);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Windows");
+		rdbtnNewRadioButton.setBounds(0, 0, 69, 23);
+		rdbtnNewRadioButton.setAlignmentY(0.0f);
+		panel.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Linux");
+		rdbtnNewRadioButton_1.setBounds(0, 38, 51, 23);
+		panel.add(rdbtnNewRadioButton_1);
+		
+		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Mac");
+		rdbtnNewRadioButton_2.setBounds(0, 82, 45, 23);
+		panel.add(rdbtnNewRadioButton_2);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(220, 286, -146, 2);
+		frame.getContentPane().add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(144, 315, -132, 2);
+		frame.getContentPane().add(separator_1);
+	}
+}

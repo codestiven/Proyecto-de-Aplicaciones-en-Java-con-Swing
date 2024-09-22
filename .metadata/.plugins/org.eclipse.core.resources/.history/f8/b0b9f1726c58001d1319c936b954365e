@@ -1,0 +1,87 @@
+package tareas;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.Window.Type;
+import java.awt.FlowLayout;
+import javax.swing.JPanel;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.BoxLayout;
+import java.awt.Component;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import java.awt.BorderLayout;
+
+public class Imitador {
+
+	private JFrame frmImitador;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Imitador window = new Imitador();
+					window.frmImitador.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Imitador() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmImitador = new JFrame();
+		frmImitador.setTitle("Imitador");
+		frmImitador.setBounds(100, 100, 450, 573);
+		frmImitador.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmImitador.getContentPane().setLayout(new BoxLayout(frmImitador.getContentPane(), BoxLayout.Y_AXIS));
+		
+		JPanel panel_up = new JPanel();
+		panel_up.setAlignmentY(0.0f);
+		panel_up.setAlignmentX(0.0f);
+		panel_up.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		frmImitador.getContentPane().add(panel_up);
+		panel_up.setLayout(null);
+		
+		JLabel text1 = new JLabel("Original");
+		text1.setBounds(10, 11, 46, 14);
+		panel_up.add(text1);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(46, 51, 116, 121);
+		panel_up.add(panel);
+		FlowLayout fl_panel = new FlowLayout(FlowLayout.CENTER, 10, 15);
+		panel.setLayout(fl_panel);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
+		panel.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("New radio button");
+		panel.add(rdbtnNewRadioButton_1);
+		
+		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("New radio button");
+		panel.add(rdbtnNewRadioButton_2);
+		
+		JPanel panel_Down = new JPanel();
+		panel_Down.setAlignmentY(0.0f);
+		panel_Down.setAlignmentX(0.0f);
+		panel_Down.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		frmImitador.getContentPane().add(panel_Down);
+		panel_Down.setLayout(null);
+	}
+}

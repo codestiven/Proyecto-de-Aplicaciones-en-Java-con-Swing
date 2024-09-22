@@ -1,0 +1,46 @@
+package tareas;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.Window.Type;
+
+public class Imitador {
+
+	private JFrame frmImitador;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Imitador window = new Imitador();
+					window.frmImitador.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Imitador() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmImitador = new JFrame();
+		frmImitador.setType(Type.UTILITY);
+		frmImitador.setTitle("Imitador");
+		frmImitador.setBounds(100, 100, 450, 300);
+		frmImitador.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}

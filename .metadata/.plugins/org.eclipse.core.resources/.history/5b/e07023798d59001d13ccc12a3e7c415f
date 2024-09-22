@@ -1,0 +1,80 @@
+package tareas;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JSeparator;
+import java.awt.Color;
+import javax.swing.SwingConstants;
+
+public class Encuesta {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Encuesta window = new Encuesta();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Encuesta() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 346, 501);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Elige un sistema operativo");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel.setBounds(23, 62, 180, 14);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JSeparator separator = new JSeparator();
+		separator.setToolTipText("");
+		separator.setForeground(new Color(0, 0, 0));
+		separator.setBackground(new Color(0, 0, 0));
+		separator.setBounds(220, 330, -208, -42);
+		frame.getContentPane().add(separator);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Windows");
+		rdbtnNewRadioButton.setBounds(23, 96, 192, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton);
+		rdbtnNewRadioButton.setAlignmentY(0.0f);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Linux");
+		rdbtnNewRadioButton_1.setBounds(23, 134, 51, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton_1);
+		
+		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Mac");
+		rdbtnNewRadioButton_2.setBounds(23, 168, 45, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton_2);
+	}
+}

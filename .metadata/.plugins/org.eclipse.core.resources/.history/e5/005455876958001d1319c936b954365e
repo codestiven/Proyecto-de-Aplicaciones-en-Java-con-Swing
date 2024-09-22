@@ -1,0 +1,93 @@
+package tareas;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class generador {
+
+	private JFrame frmGeneradorDeNumeros;
+	private JTextField salida;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					generador window = new generador();
+					window.frmGeneradorDeNumeros.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public generador() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmGeneradorDeNumeros = new JFrame();
+		frmGeneradorDeNumeros.setTitle("Generador de numeros");
+		frmGeneradorDeNumeros.setBounds(100, 100, 358, 415);
+		frmGeneradorDeNumeros.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmGeneradorDeNumeros.getContentPane().setLayout(null);
+		
+		JLabel text1 = new JLabel("Numero 2");
+		text1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		text1.setBounds(33, 152, 83, 35);
+		frmGeneradorDeNumeros.getContentPane().add(text1);
+		
+		JLabel text2 = new JLabel("Numero 1");
+		text2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		text2.setBounds(33, 77, 83, 35);
+		frmGeneradorDeNumeros.getContentPane().add(text2);
+		
+		JLabel text3 = new JLabel("Numero generado");
+		text3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		text3.setBounds(33, 216, 124, 35);
+		frmGeneradorDeNumeros.getContentPane().add(text3);
+		
+		JSpinner num1 = new JSpinner();
+		num1.setModel(new SpinnerNumberModel(Integer.valueOf(0), null, null, Integer.valueOf(1)));
+		num1.setBounds(167, 82, 68, 27);
+		frmGeneradorDeNumeros.getContentPane().add(num1);
+		
+		JSpinner num2 = new JSpinner();
+		num2.setBounds(167, 160, 68, 27);
+		frmGeneradorDeNumeros.getContentPane().add(num2);
+		
+		salida = new JTextField();
+		salida.setEditable(false);
+		salida.setBounds(167, 221, 86, 27);
+		frmGeneradorDeNumeros.getContentPane().add(salida);
+		salida.setColumns(10);
+		
+		JButton boton = new JButton("Generar");
+		boton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				salida.setText("aaa");
+			}
+		});
+		boton.setBounds(172, 280, 75, 27);
+		frmGeneradorDeNumeros.getContentPane().add(boton);
+	}
+}
